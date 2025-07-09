@@ -1,0 +1,308 @@
+:root {
+    --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --color-bg: #f4f7f9;
+    --color-surface: #ffffff;
+    --color-text: #2c3e50;
+    --color-heading: #1a1a1a;
+    --color-link: #3498db;
+    --color-link-hover: #1abc9c;
+
+    --color-primary: #2c3e50;
+    --color-secondary: #34495e;
+    --color-accent: #1abc9c;
+
+    --color-flash-success-bg: #d4edda;
+    --color-flash-success-text: #155724;
+    --color-flash-danger-bg: #f8d7da;
+    --color-flash-danger-text: #721c24;
+    --color-flash-info-bg: #d1ecf1;
+    --color-flash-info-text: #0c5460;
+
+    --max-width: 960px;
+    --radius: 10px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --transition: 0.3s ease;
+
+    --btn-primary: #4361ee;
+  --btn-hover: #3a56e0;
+  --btn-active: #2f4acb;
+  --btn-text: white;
+  --btn-radius: 8px;
+  --btn-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --btn-hover-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flow;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1.5em 2em;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 0.3em;
+}
+
+nav {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    background-color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    padding: 0.5em 1em;
+    border-radius: var(--radius);
+    transition: background-color var(--transition), transform 0.2s;
+}
+
+nav a:hover {
+    background-color: var(--color-link-hover);
+    transform: translateY(-2px);
+}
+
+main {
+    width: 600px;
+    height: 600px;
+    padding: 3em 2em;
+    margin: 4em auto;
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.4s ease;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.flash {
+    padding: 1em;
+    margin-bottom: 1.5em;
+    border-radius: var(--radius);
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.flash.success {
+    background-color: var(--color-flash-success-bg);
+    color: var(--color-flash-success-text);
+    border: 1px solid #c3e6cb;
+}
+
+.flash.danger {
+    background-color: var(--color-flash-danger-bg);
+    color: var(--color-flash-danger-text);
+    border: 1px solid #f5c6cb;
+}
+
+.flash.info {
+    background-color: var(--color-flash-info-bg);
+    color: var(--color-flash-info-text);
+    border: 1px solid #bee5eb;
+}
+
+footer {
+    background-color: #ecf0f1;
+    text-align: center;
+    padding: 1em;
+    font-size: 0.95em;
+    color: #666;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+}
+
+@media (max-width: 640px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        padding: 1.5em 1em;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+}
+
+.card {
+    background-color: white;
+    padding: 2em;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  color: #000000; /* black font color */
+  font-size: 1.5em;
+  padding: 10px 0;
+  position: relative;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%; /* starts outside the view */
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.button {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  /* Visual Style */
+  background-color: var(--btn-primary);
+  color: var(--btn-text);
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  text-align: center;
+
+  box-shadow: var(--btn-shadow);
+  transform: translateY(0);
+  transition: all 0.2s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: var(--btn-hover);
+  box-shadow: var(--btn-hover-shadow);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  background-color: var(--btn-active);
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(67, 97, 238, 0.4);
+  outline-offset: 2px;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, white 10%, transparent 10%) no-repeat 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+.button:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.button-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.button-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.button-outline {
+  background: transparent;
+  border: 2px solid var(--btn-primary);
+  color: var(--btn-primary);
+}
+
+.button-outline:hover {
+  background: rgba(67, 97, 238, 0.08);
+}
+
+.button-ghost {
+  background: transparent;
+  color: var(--btn-primary);
+  box-shadow: none;
+}
+
+.button-ghost:hover {
+  background: rgba(67, 97, 238, 0.08);
+}

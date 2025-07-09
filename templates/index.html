@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Welcome to the Future of Intelligence{% if current_user.is_authenticated %}, {{ current_user.username }}{% endif %}!</h2>
+
+    {% if current_user.is_authenticated %}
+        <p>You are logged in.</p>
+    {% else %}
+<br>
+    {% endif %}
+ <div class="marquee">
+  <span>Welcome to BuBAI Website - Simplify, Create, Automate 🚀</span>
+        </div>
+        <hr>
+<br>
+    <br>
+        <p>This Artificial Intelligence is transforming the way we live,
+            learn, and build. On this platform, you can discover advanced
+            AI tools, learn how they work, and use them to turn your ideas
+            into reality. Whether you are a developer, a student, or simply curious,
+            this is your gateway to the world of smart possibilities.</p>
+<br><br>
+        <a href="{{ url_for('login') }}"><button class="button">get started</button></a>
+{% endblock %}

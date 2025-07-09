@@ -1,0 +1,241 @@
+:root {
+    --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --color-bg: #f5f7fa;
+    --color-card-bg: #ffffff;
+    --color-text: #333;
+    --color-heading: #2c3e50;
+    --color-label: #34495e;
+    --color-primary: #3498db;
+    --color-primary-hover: #2980b9;
+    --color-accent: #1abc9c;
+    --color-accent-dark: #16a085;
+    --color-error: #e74c3c;
+    --radius: 10px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    color: var(--color-heading);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.form-header p {
+    color: var(--color-label);
+    font-size: 1.1rem;
+}
+
+.login-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+        }
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-label);
+    z-index: 2;
+}
+
+.form-field {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 1px solid #e1e5eb;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: none;
+}
+
+.form-field:focus {
+    background-color: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.15);
+    outline: none;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-top: -0.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-label);
+    cursor: pointer;
+}
+
+.remember-me input {
+    margin: 0;
+}
+
+.forgot-password {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: var(--color-accent-dark);
+    text-decoration: underline;
+}
+
+/* Button container and effects */
+.btn-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3em;
+    margin-top: 1.5rem;
+    box-shadow: 0 10px 30px rgba(26, 188, 156, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(26, 188, 156, 0.5);
+}
+
+.btn-container:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 15px rgba(26, 188, 156, 0.3);
+}
+
+.btn-primary {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 1.1em;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: #fff;
+    border: none;
+    border-radius: 3em;
+    font-size: 1.15em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-hover-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: 1;
+}
+
+.btn-container:hover .btn-hover-effect {
+    width: 500px;
+    height: 500px;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--color-label);
+    font-size: 0.95rem;
+}
+
+.form-footer a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.form-footer a:hover {
+    color: var(--color-accent-dark);
+    text-decoration: underline;
+}
+
+.error {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+    padding-left: 0.5rem;
+}
+
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+}

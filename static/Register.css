@@ -1,0 +1,121 @@
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.form-header p {
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-secondary);
+    z-index: 2;
+}
+
+.form-field {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 1px solid #e1e5eb;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background-color: #f8f9fa;
+    transition: all var(--transition);
+    position: relative;
+    box-shadow: none;
+}
+
+.form-field:focus {
+    background-color: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.15);
+    outline: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: white;
+    border: none;
+    border-radius: 3em;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(26, 188, 156, 0.3);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(26, 188, 156, 0.45);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+}
+
+.form-footer a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.form-footer a:hover {
+    color: var(--color-accent-dark);
+    text-decoration: underline;
+}
+
+.error {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+    padding-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .register-container {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+    
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
